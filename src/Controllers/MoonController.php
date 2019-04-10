@@ -66,9 +66,7 @@ class MoonController extends Controller
             'Module.'.$this->moduleName.'.'.$view,
             'vendor.Moon.Module.'.$view
         ];
-        foreach($files as $file){
-            if(view()->exists($file)) return view($file, $params)->render();
-        }
+        return view()->first($files, $params)->render();
     }
 
 

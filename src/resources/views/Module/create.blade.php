@@ -1,11 +1,11 @@
 @extends('vendor.Moon.layouts.app')
 
 @section('content-title')
-<b>{{$title}}</b> | {{$action}}
+<b>{{__($title)}}</b> | {{__($action)}}
 @endsection
 
 @section('content-description')
-{{$description}}
+{{__($description)}}
 @endsection
 
 @section('content')

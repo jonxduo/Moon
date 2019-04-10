@@ -2,7 +2,8 @@
     "name": "jxd/moon",
     "type": "project",
     "require": {
-        "anahkiasen/former": "^4.2"
+        "anahkiasen/former": "^4.2",
+        "atnic/laravel-inspinia": "^0.4.2"
     },
     "authors": [
         {

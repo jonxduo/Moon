@@ -10,5 +10,21 @@
             "email": "jonxduo@gmail.com"
         }
     ],
-    "minimum-stability": "dev"
+    "keywords": ["Laravel", "Moon", "CRM"],
+    "minimum-stability": "dev",
+    "autoload": {
+        "psr-4": {
+            "Jxd\\Moon\\": "src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Jxd\\Moon\\MoonServiceProvider"
+            ],
+            "aliases": {
+                "Moon": "Jxd\\Moon\\Facades\\Moon"
+            }
+        }
+    }
 }

@@ -20,8 +20,9 @@ class CreateFieldsTable extends Migration
             $table->string('label');
             $table->string('type');
             $table->string('field_type');
-            $table->string('options')->nullable();
+            $table->string('json_options')->nullable();
             $table->boolean('in_table')->default(1);
+            $table->timestamps();
         });
     }
 

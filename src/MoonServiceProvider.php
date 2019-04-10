@@ -1,5 +1,4 @@
 <?php
-
 namespace Jxd\Moon;
 
 use Illuminate\Support\ServiceProvider;

@@ -18,11 +18,11 @@ class Field extends Model
 
     public function setOptionsAttribute()
     {
-        $this->attributes['options'] = \json_decode($this->options);
+        $this->attributes['options'] = \json_decode($this->json_options);
     }
 
     public function getOptionsAttribute()
     {
-        return \json_decode($this->attributes['options']);
+        return \json_decode($this->attributes['json_options']);
     }
 }

@@ -21,6 +21,7 @@ class CreateModulesTable extends Migration
             $table->boolean('active')->default(0);
             $table->boolean('builded')->default(0);
             $table->boolean('updated')->default(0);
+            $table->timestamps();
         });
     }
 

@@ -1,0 +1,11 @@
+<?php
+
+namespace App\Http\Controllers\Moon;
+
+use Illuminate\Http\Request;
+use App\Http\Controllers\MoonController;
+
+class FieldController extends MoonController
+{
+    //
+}

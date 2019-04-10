@@ -1,0 +1,14 @@
+{
+    "name": "jxd/moon",
+    "type": "project",
+    "require": {
+        "anahkiasen/former": "^4.2"
+    },
+    "authors": [
+        {
+            "name": "Francesco Monti",
+            "email": "jonxduo@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev"
+}

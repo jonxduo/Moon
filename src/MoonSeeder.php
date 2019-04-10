@@ -2,8 +2,8 @@
 namespace Jxd\Moon;
 
 use Illuminate\Database\Seeder;
-use App\Moon\Module;
-use App\Moon\Field;
+use Jxd\Moon\Modules\Module;
+use Jxd\Moon\Modules\Field;
 
 class MoonSeeder extends Seeder
 {

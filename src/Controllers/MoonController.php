@@ -64,7 +64,7 @@ class MoonController extends Controller
         $files = [
             $this->moduleName.'.'.$view,
             'Module.'.$this->moduleName.'.'.$view,
-            'vendor.Plurima.Module.'.$view
+            'vendor.Moon.Module.'.$view
         ];
         foreach($files as $file){
             if(view()->exists($file)) return view($file, $params)->render();

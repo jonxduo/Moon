@@ -17,11 +17,6 @@
             "Jxd\\Moon\\": "src/"
         }
     },
-    "autoload": {
-        "psr-4": {
-            "Jxd\\Moon\\Tests": "tests"
-        }
-    },
     "extra": {
         "laravel": {
             "providers": [

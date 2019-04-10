@@ -17,7 +17,7 @@ class MoonSeeder extends Seeder
         // Module in Module table
         $module = new Module;
         $module->name = 'Module';
-        $module->model_name = 'App\Moon\Module';
+        $module->model_name = 'Jxd\Moon\Modules\Module';
         $module->description = 'Module managament';
         $module->active = true;
         $module->builded = true;
@@ -54,7 +54,7 @@ class MoonSeeder extends Seeder
         // Field in Module table
         $module = new Module;
         $module->name = 'Field';
-        $module->model_name = 'App\Moon\Field';
+        $module->model_name = 'Jxd\Moon\Modules\Field';
         $module->description = 'Fields managament';
         $module->active = true;
         $module->builded = true;

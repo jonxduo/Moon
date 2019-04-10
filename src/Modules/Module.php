@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Moon;
+namespace Jxd\Moon\Modules;
 
 use Illuminate\Database\Eloquent\Model;
 
@@ -15,7 +15,7 @@ class Module extends Model
 
     public function fields()
     {
-        return $this->hasMany('App\Moon\Field', 'module_id');
+        return $this->hasMany('Jxd\Moon\Modules\Field', 'module_id');
     }
 
     public function setFieldsAttribute()

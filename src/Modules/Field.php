@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Moon;
+namespace Jxd\Moon\Modules;
 
 use Illuminate\Database\Eloquent\Model;
 
@@ -13,7 +13,7 @@ class Field extends Model
     }
 
     public function model(){
-        return $this->belongsTo('App\Moon\Module', 'module_id');
+        return $this->belongsTo('Jxd\Moon\Modules\Module', 'module_id');
     }
 
     public function setOptionsAttribute()

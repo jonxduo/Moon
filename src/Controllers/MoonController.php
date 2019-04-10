@@ -1,9 +1,10 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace Jxd\Moon\Controllers;
 
 use Illuminate\Http\Request;
-use App\Moon\Module;
+use App\Http\Controllers\Controller;
+use Jxd\Moon\Modules\Module;
 
 class MoonController extends Controller
 {

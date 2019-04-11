@@ -27,6 +27,8 @@ class MoonController extends Controller
         $this->set(['action'=>'list'], ['index']);
         $this->set(['action'=>'create'], ['create']);
         $this->set(['action'=>'edit'], ['edit']);
+        $this->set(['formUrl' => action($this->controllerName.'@store', ['module'=>$this->moduleName])], ['create']);
+        $this->set(['formUrl' => action($this->controllerName.'@update', ['module'=>$this->moduleName])], ['edit']);
     }
 
     public function index ()
@@ -74,18 +76,15 @@ class MoonController extends Controller
     public function setByRequest(){
         $this->moduleName = request()->module;
         $module = Module::whereName($this->moduleName);
-        if($module->count() > 0) $this->module = $module->first();
-        else dd('ERROR MODULE NOT FOUND'); //TODO: prevedere azione
-
-        $this->set(['formUrl' => action($controllerName.'@store', ['module'=>$moduleName])], ['create']);
-        $this->set(['formUrl' => action($controllerName.'@update', ['module'=>$moduleName])], ['edit']);
+        if($module->count() == 0) echo 'ERROR MODULE NOT FOUND'; //TODO prevedere azione
+        else $this->module = $module->first();
     }
 
     public function setByChild(){
         $this->moduleName = str_replace('Controller', '', (new \ReflectionClass($this))->getShortName());
         $module = Module::whereName($this->moduleName);
-        if($module->count() > 0) $this->module = $module->first();
-        else dd('ERROR MODULE NOT FOUND'); //TODO: prevedere azione
+        if($module->count() == 0) echo 'ERROR MODULE NOT FOUND'; //TODO prevedere azione
+        else $this->module = $module->first();
     }
 
 }

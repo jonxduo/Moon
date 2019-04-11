@@ -22,6 +22,8 @@ class CreateFieldsTable extends Migration
             $table->string('field_type');
             $table->string('json_options')->nullable();
             $table->boolean('in_table')->default(1);
+            $table->boolean('buided')->default(0);
+            $table->boolean('migrated')->default(0);
             $table->timestamps();
         });
     }

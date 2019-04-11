@@ -1,0 +1,40 @@
+<?php
+
+namespace App\Http\Controllers\Modules;
+
+use Illuminate\Http\Request;
+use App\Http\Controllers\MoonController;
+use __model_name__;
+
+class __controller_class_name__ extends MoonController
+{
+    public function __construct()
+    {
+        parent::__construct();
+    }
+
+    public function show ($id)
+    {
+        $module = __name__;
+        parent::show($module, $id);
+    }
+
+    public function edit ($id)
+    {
+        $module = __name__;
+        parent::edit($module, $id);
+    }
+
+    public function update ($id)
+    {
+        $module = __name__;
+        parent::update($module, $id);
+    }
+
+    public function destroy ($id)
+    {
+        $module = __name__;
+        parent::destroy($module, $id);
+    }
+
+}

@@ -2,10 +2,11 @@
 
 namespace Jxd\Moon\Modules;
 
-use Illuminate\Database\Eloquent\Model;
+use Jxd\Moon\MoonModel;
 
-class Module extends Model
+class Module extends MoonModel
 {
+    //use SoftDeletes;
 
     public function __construct(array $attributes = array())
     {

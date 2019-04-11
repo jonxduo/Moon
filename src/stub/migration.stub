@@ -1,0 +1,32 @@
+<?php
+
+use Illuminate\Support\Facades\Schema;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Database\Migrations\Migration;
+
+class __migration_class_name__ extends Migration
+{
+    /**
+     * Migration generate Module Table Schema by LaraAdmin
+     *
+     * @return void
+     */
+    public function up()
+    {
+        Schema::create('__name__', function (Blueprint $table) {
+            __generated_table_fields__
+        });
+    }
+
+    /**
+     * Reverse the migrations.
+     *
+     * @return void
+     */
+    public function down()
+    {
+        if(Schema::hasTable('__db_table_name__')) {
+            Schema::drop('__db_table_name__');
+        }
+    }
+}

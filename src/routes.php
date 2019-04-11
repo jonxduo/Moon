@@ -1,4 +1,6 @@
 <?php
 
-Route::resource('/admin/module', 'Jxd\Moon\Controllers\ModuleController')->middleware('web');
-Route::resource('/admin/field', 'Jxd\Moon\Controllers\FieldController')->middleware('web');
+Route::namespace('Jxd\Moon\Controllers')->group(function(){
+    Route::resource('/admin/module', 'ModuleController')->middleware('web');
+    Route::resource('/admin/field', 'FieldController')->middleware('web');
+});

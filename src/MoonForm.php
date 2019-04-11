@@ -1,6 +1,6 @@
 <?php
 
-namespace App;
+namespace Jxd\Moon;
 
 use Former\Facades\Former;
 

@@ -11,7 +11,7 @@ class MoonController extends Controller
     public function __construct ()
     {
         $this->middleware('auth');
-        $this->controllerName = str_replace('App\Http\Controllers\\', '', get_class($this));
+        $this->controllerName = str_replace('App\Http\Controllers', '', get_class($this));
         $this->moduleName = str_replace('Controller', '', (new \ReflectionClass($this))->getShortName());
         $module = Module::whereName($this->moduleName);
         if($module->count() > 0) $this->module = $module->first();
@@ -43,7 +43,7 @@ class MoonController extends Controller
 
     public function store ()
     {
-
+        return $this->render('index');
     }
 
     public function set ($params, $views = [])

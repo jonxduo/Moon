@@ -84,8 +84,9 @@ class MoonController extends Controller
         return $this->render('edit');
     }
 
-    public function update ($module, $id=null){
-        if($id == null) $id = Request::get($id);
+    public function update ($module, $id=null)
+    {
+        if($id == null) $id = Input::get('id');
         $validator = Validator::make( Input::all(), [] );
 
         if($validator->fails()){

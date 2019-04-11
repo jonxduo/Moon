@@ -1,26 +1,25 @@
 <?php
 
-namespace Jxd\Moon\Controllers;
+namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Jxd\Moon\Modules\Module;
+use Illuminate\Routing\Route;
 
 class MoonController extends Controller
 {
     public function __construct ()
     {
-        $this->middleware('auth');
-        $this->controllerName = str_replace('App\Http\Controllers', '', get_class($this));
-        $this->moduleName = str_replace('Controller', '', (new \ReflectionClass($this))->getShortName());
-        $module = Module::whereName($this->moduleName);
-        if($module->count() > 0) $this->module = $module->first();
-        else dd('ERROR MODULE NOT FOUND'); //TODO: prevedere azione
+        $this->controllerName = str_replace('App\Http\Controllers\\', '', get_class($this));
+        if($this->controllerName == 'MoonController') $this->setByRequest();
+        else $this->setByChild();
 
         // views parameters:
         $this->viewParams = array();
         $this->set([
             'controllerName' => $this->controllerName,
+            'moduleName' => $this->controllerName,
             'title' => $this->module->name,
             'description' => $this->module->description,
             'fields'=>$this->module->fields()->whereInTable(1)->get()
@@ -46,6 +45,8 @@ class MoonController extends Controller
         return $this->render('index');
     }
 
+    /** UTILITY */
+
     public function set ($params, $views = [])
     {
         if(count($views) == 0) $views = ['index', 'edit', 'create'];
@@ -70,5 +71,21 @@ class MoonController extends Controller
         return view()->first($files, $params)->render();
     }
 
+    public function setByRequest(){
+        $this->moduleName = request()->module;
+        $module = Module::whereName($this->moduleName);
+        if($module->count() > 0) $this->module = $module->first();
+        else dd('ERROR MODULE NOT FOUND'); //TODO: prevedere azione
+
+        $this->set(['formUrl' => action($controllerName.'@store', ['module'=>$moduleName])], ['create']);
+        $this->set(['formUrl' => action($controllerName.'@update', ['module'=>$moduleName])], ['edit']);
+    }
+
+    public function setByChild(){
+        $this->moduleName = str_replace('Controller', '', (new \ReflectionClass($this))->getShortName());
+        $module = Module::whereName($this->moduleName);
+        if($module->count() > 0) $this->module = $module->first();
+        else dd('ERROR MODULE NOT FOUND'); //TODO: prevedere azione
+    }
 
 }

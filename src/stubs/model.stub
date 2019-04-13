@@ -3,6 +3,7 @@
 namespace App\Modules;
 
 use Jxd\Moon\MoonModel;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 class __model_class_name__ extends MoonModel
 {

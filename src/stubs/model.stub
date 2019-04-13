@@ -1,0 +1,22 @@
+<?php
+
+namespace App\Modules;
+
+use Jxd\Moon\MoonModel;
+
+class __model_class_name__ extends MoonModel
+{
+    use SoftDeletes;
+
+    public function __construct(array $attributes = array())
+    {
+        parent::__construct($attributes);
+__generated_appends__
+    }
+
+    /** Relations */
+__generated_relation_functions__
+
+    /**_UPDATES_SPACE_**/
+
+}

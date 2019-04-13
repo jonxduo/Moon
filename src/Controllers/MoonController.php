@@ -112,12 +112,12 @@ class MoonController extends Controller
         return Redirect::to(action($this->controllerName.'@index', ['module' => $this->module->name]));
     }
 
-    public function build ($id)
+    public function build ($module)
     {
-        //
+        Builder::build($this->module);
     }
 
-    public function upgrade ($id)
+    public function upgrade ($module)
     {
         //
     }

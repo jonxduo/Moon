@@ -1,0 +1,14 @@
+    public function __relation_name__()
+    {
+        return $this->belongsTo('__model_name__', '__foreign_key__');
+    }
+
+    public function set__relation_name_u__Attribute()
+    {
+        $this->attributes['__relation_name__'] = $this->__relation_name__()->get();
+    }
+
+    public function get__relation_name_u__Attribute()
+    {
+        return $this->__relation_name__()->get();
+    }

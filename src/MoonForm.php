@@ -3,6 +3,7 @@
 namespace Jxd\Moon;
 
 use Former\Facades\Former;
+use Jxd\Moon\Modules\Module;
 
 class MoonForm
 {
@@ -81,6 +82,21 @@ class MoonForm
     public static function array_select ($field, $data)
     {
         $field->options($data->options->array);
+        return MoonForm::addStandardOptions($field, $data);
+    }
+
+    public static function module_select ($field, $data)
+    {
+        $module = Module::whereName($data->options->module)->first();
+        $resources = new $module->model_name;
+        $array = [];
+        if(!isset($field->options->filters)) $resources = $resources->all();
+        $key = isset($field->options->key) ? $field->options->key : 'id';
+        $show = isset($field->options->show) ? $field->options->show : 'name';
+        foreach($resources as $resource){
+            $array[$resource->$key] = $resource->$show;
+        }
+        $field->options($array);
         return MoonForm::addStandardOptions($field, $data);
     }
 }

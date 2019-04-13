@@ -13,8 +13,11 @@ class __migration_class_name__ extends Migration
      */
     public function up()
     {
-        Schema::create('__name__', function (Blueprint $table) {
-            __generated_table_fields__
+        Schema::create('__db_table_name__', function (Blueprint $table) {
+            $table->bigIncrements('id');
+__generated_table_fields__
+            $table->timestamps();
+            $table->softDeletes();
         });
     }
 
